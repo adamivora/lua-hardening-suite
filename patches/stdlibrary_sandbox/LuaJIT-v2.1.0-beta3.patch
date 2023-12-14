@@ -1,0 +1,8 @@
+--- LuaJIT-v2.1.0-beta3/src/Makefile
++++ LuaJIT-v2.1.0-beta3-patch/src/Makefile
+@@ -189,1 +189,2 @@
++TARGET_CFLAGS+= -include stdlibrary_wrapper.h
+ ASOPTIONS= $(CCOPT) $(CCWARN) $(XCFLAGS) $(CFLAGS)
+@@ -515,1 +515,2 @@
++	  stdlibrary_wrapper.o \
+ 	  $(LJLIB_O) lib_init.o

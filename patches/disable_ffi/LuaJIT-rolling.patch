@@ -1,0 +1,7 @@
+--- LuaJIT-rolling/src/Makefile
++++ LuaJIT-rolling-patch/src/Makefile
+@@ -95,3 +95,3 @@
+ # make use of it.
+-#XCFLAGS+= -DLUAJIT_DISABLE_FFI
++XCFLAGS+= -DLUAJIT_DISABLE_FFI
+ #

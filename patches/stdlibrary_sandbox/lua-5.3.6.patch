@@ -1,0 +1,26 @@
+--- lua-5.3.6/src/Makefile
++++ lua-5.3.6-patch/src/Makefile
+@@ -9,3 +9,3 @@
+ CC= gcc -std=gnu99
+-CFLAGS= -O2 -Wall -Wextra -DLUA_COMPAT_5_2 $(SYSCFLAGS) $(MYCFLAGS)
++CFLAGS= -O2 -Wall -Wextra -DLUA_COMPAT_5_2 $(SYSCFLAGS) $(MYCFLAGS) -include stdlibrary_wrapper.h
+ LDFLAGS= $(SYSLDFLAGS) $(MYLDFLAGS)
+@@ -31,3 +31,3 @@
+ LUA_A=	liblua.a
+-CORE_O=	lapi.o lcode.o lctype.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o \
++CORE_O=	stdlibrary_wrapper.o lapi.o lcode.o lctype.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o \
+ 	lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o \
+@@ -62,6 +62,6 @@
+ $(LUA_T): $(LUA_O) $(LUA_A)
+-	$(CC) -o $@ $(LDFLAGS) $(LUA_O) $(LUA_A) $(LIBS)
++	$(CC) -o $@ $(LDFLAGS) $(LUA_O) stdlibrary_wrapper.o $(LUA_A) $(LIBS)
+ 
+ $(LUAC_T): $(LUAC_O) $(LUA_A)
+-	$(CC) -o $@ $(LDFLAGS) $(LUAC_O) $(LUA_A) $(LIBS)
++	$(CC) -o $@ $(LDFLAGS) $(LUAC_O) stdlibrary_wrapper.o $(LUA_A) $(LIBS)
+ 
+@@ -130,3 +130,3 @@
+ # DO NOT DELETE
+-
++stdlibrary_wrapper.o: stdlibrary_wrapper.c
+ lapi.o: lapi.c lprefix.h lua.h luaconf.h lapi.h llimits.h lstate.h \

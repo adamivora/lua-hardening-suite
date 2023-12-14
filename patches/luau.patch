@@ -1,0 +1,9 @@
+--- luau/Makefile
++++ luau-patch/Makefile
+@@ -209,5 +209,5 @@
+ # executable target aliases
+ luau: $(REPL_CLI_TARGET)
+-	ln -fs $^ $@
++#	ln -fs $^ $@
+ 
+ luau-analyze: $(ANALYZE_CLI_TARGET)

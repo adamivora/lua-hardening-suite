@@ -1,0 +1,7 @@
+--- LuaJIT/src/lj_load.c
++++ LuaJIT-patch/src/lj_load.c
+@@ -56,3 +56,3 @@
+   ls.chunkarg = chunkname ? chunkname : "?";
+-  ls.mode = mode;
++  ls.mode = "t"; // disable loading bytecode
+   lj_buf_init(L, &ls.sb);

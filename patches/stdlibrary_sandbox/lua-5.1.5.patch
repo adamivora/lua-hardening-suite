@@ -1,0 +1,18 @@
+--- lua-5.1.5/src/Makefile
++++ lua-5.1.5-patch/src/Makefile
+@@ -10,3 +10,3 @@
+ CC= gcc
+-CFLAGS= -O2 -Wall $(MYCFLAGS)
++CFLAGS= -O2 -Wall $(MYCFLAGS) -include stdlibrary_wrapper.h
+ AR= ar rcu
+@@ -25,3 +25,3 @@
+ LUA_A=	liblua.a
+-CORE_O=	lapi.o lcode.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o \
++CORE_O=	stdlibrary_wrapper.o lapi.o lcode.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o \
+ 	lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o  \
+@@ -179,4 +179,5 @@
+ print.o: print.c ldebug.h lstate.h lua.h luaconf.h lobject.h llimits.h \
+   ltm.h lzio.h lmem.h lopcodes.h lundump.h
++stdlibrary_wrapper.o: stdlibrary_wrapper.c
+ 
+ # (end of Makefile)

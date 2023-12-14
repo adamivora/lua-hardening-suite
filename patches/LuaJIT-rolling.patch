@@ -1,0 +1,10 @@
+--- LuaJIT-rolling/src/Makefile
++++ LuaJIT-rolling-patch/src/Makefile
+@@ -479,5 +479,5 @@
+ ifeq (Windows,$(HOST_SYS)$(HOST_MSYS))
+-  GIT_RELVER= if exist ..\.git ( $(GIT) show -s --format=%%ct >luajit_relver.txt ) else ( type ..\.relver >luajit_relver.txt )
++  GIT_RELVER= echo 123 >luajit_relver.txt
+ else
+-  GIT_RELVER= [ -e ../.git ] && $(GIT) show -s --format=%ct >luajit_relver.txt 2>/dev/null || cat ../.relver >luajit_relver.txt 2>/dev/null || :
++  GIT_RELVER = echo 123 >luajit_relver.txt
+ endif

@@ -1,0 +1,8 @@
+--- LuaJIT-4f8736/src/Makefile
++++ LuaJIT-4f8736-patch/src/Makefile
+@@ -189,1 +189,2 @@
++TARGET_CFLAGS+= -include stdlibrary_wrapper.h
+ ASOPTIONS= $(CCOPT) $(CCWARN) $(XCFLAGS) $(CFLAGS)
+@@ -484,1 +484,2 @@
++	  stdlibrary_wrapper.o \
+ 	  $(LJLIB_O) lib_init.o

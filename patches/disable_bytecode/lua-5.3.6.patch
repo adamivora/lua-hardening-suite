@@ -1,0 +1,8 @@
+--- lua-5.3.6/src/lauxlib.c
++++ lua-5.3.6-patch/src/lauxlib.c
+@@ -703,4 +703,5 @@
+ LUALIB_API int luaL_loadfilex (lua_State *L, const char *filename,
+                                              const char *mode) {
++  mode = "text";
+   LoadF lf;
+   int status, readstatus;

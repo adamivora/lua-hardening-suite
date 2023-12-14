@@ -1,0 +1,7 @@
+--- LuaJIT-v2.1.0-beta3/src/Makefile
++++ LuaJIT-v2.1.0-beta3-patch/src/Makefile
+@@ -96,3 +96,3 @@
+ # make use of it.
+-#XCFLAGS+= -DLUAJIT_DISABLE_FFI
++XCFLAGS+= -DLUAJIT_DISABLE_FFI
+ #

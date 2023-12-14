@@ -1,0 +1,7 @@
+--- LuaJIT-4f8736/src/Makefile
++++ LuaJIT-4f8736-patch/src/Makefile
+@@ -96,3 +96,3 @@
+ # make use of it.
+-#XCFLAGS+= -DLUAJIT_DISABLE_FFI
++XCFLAGS+= -DLUAJIT_DISABLE_FFI
+ #

@@ -1,0 +1,12 @@
+[submodule "interpreters/LuaJIT-v2.1.0-beta3"]
+	path = interpreters/LuaJIT-v2.1.0-beta3
+	url = https://github.com/LuaJIT/LuaJIT.git
+[submodule "interpreters/LuaJIT-4f8736"]
+	path = interpreters/LuaJIT-4f8736
+	url = https://github.com/LuaJIT/LuaJIT.git
+[submodule "interpreters/LuaJIT-rolling"]
+	path = interpreters/LuaJIT-rolling
+	url = https://github.com/LuaJIT/LuaJIT.git
+[submodule "interpreters/luau"]
+	path = interpreters/luau
+	url = https://github.com/luau-lang/luau.git
